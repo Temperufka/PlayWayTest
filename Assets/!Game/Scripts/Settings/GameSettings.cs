@@ -19,14 +19,14 @@ namespace Company.Settings
         public class Settings
         {
             [SerializeField] private PlayerSettings m_playerSettings = null;
-            [SerializeField] private List<Waypoint> m_wayPoints = new List<Waypoint>();
+            [SerializeField] private List<InitialWaypoints> m_wayPoints = new List<InitialWaypoints>();
 
             public PlayerSettings PlayerSettings
             {
                 get => m_playerSettings;
             }
 
-            public List<Waypoint> Waypoints
+            public List<InitialWaypoints> Waypoints
             {
                 get => m_wayPoints;
             }
@@ -44,7 +44,7 @@ namespace Company.Settings
         }
 
         [Serializable]
-        public class Waypoint
+        public class InitialWaypoints
         {
             [SerializeField] private Vector3 m_position = Vector3.zero;
 

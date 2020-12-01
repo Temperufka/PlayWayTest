@@ -1,5 +1,6 @@
 ﻿namespace Company.Bootstrap.Installers
 {
+    using System;
     using Zenject;
     using Factory;
     using Data;
@@ -20,7 +21,8 @@
 
         private void ControllersBinding()
         {
-            Container.Bind( typeof(ITickable), typeof(IInitializable)).To<PlayerMovementController>().AsSingle();
+            Container.Bind( typeof(ITickable), typeof(IInitializable), typeof(IDisposable)).To<PlayerMovementController>().AsSingle();
+            Container.Bind(typeof(IInitializable), typeof(IWaypointController)).To<WaypointController>().AsSingle();
         }
         private void FactoriesBinding()
         {
